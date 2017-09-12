@@ -47,6 +47,14 @@
     <Compile Include="Factory\PdfDocConfigurationFactory.cs" />
     <Compile Include="Factory\WordDocConfigurationFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategy\CsvExtensionStrategy.cs" />
+    <Compile Include="Strategy\DocExtensionStrategy.cs" />
+    <Compile Include="Strategy\DocxExtensionStrategy.cs" />
+    <Compile Include="Strategy\JsonExtensionStrategy.cs" />
+    <Compile Include="Strategy\PdfExtensionStrategy.cs" />
+    <Compile Include="Strategy\XlsExtensionStrategy.cs" />
+    <Compile Include="Strategy\XlsxExtensionStrategy.cs" />
+    <Compile Include="Strategy\XmlExtensionStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Business.Interfaces\Business.Interfaces.csproj">

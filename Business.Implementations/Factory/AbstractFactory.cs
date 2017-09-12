@@ -1,12 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using Business.Implementations.Strategy;
 using Business.Interfaces;
 
 namespace Business.Implementations
 {
     public abstract class AbstractFactory : IDocConfigurationFactory
     {
+        private readonly List<IExtensionStrategy> extensionStrategies;
+
+        protected AbstractFactory()
+        {
+            this.extensionStrategies = new List<IExtensionStrategy>()
+            {
+                new CsvExtensionStrategy(),
+                new DocExtensionStrategy(),
+                new DocxExtensionStrategy(),
+                new JsonExtensionStrategy(),
+                new PdfExtensionStrategy(),
+                new XlsExtensionStrategy(),
+                new XlsxExtensionStrategy(),
+                new XmlExtensionStrategy()
+            };
+        }
+
         public IDocConfiguration CreateConfiguration(DocType type)
         {
             IDocConfiguration config = new DocConfiguration();
@@ -21,9 +41,12 @@ namespace Business.Implementations
         }
 
         protected abstract string GetFont();
-
         protected abstract string GetPadding();
-        protected abstract string GetExtension(DocType type);
+
+        protected virtual string GetExtension(DocType type)
+        {
+            return this.extensionStrategies.Where(item => item.Type == type).FirstOrDefault().Extension;
+        }
 
 
         protected virtual string CalculateHash(string input)

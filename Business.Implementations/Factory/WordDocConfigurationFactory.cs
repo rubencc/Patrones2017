@@ -1,6 +1,4 @@
-﻿using Business.Interfaces;
-
-namespace Business.Implementations
+﻿namespace Business.Implementations
 {
     public class WordDocConfigurationFactory :AbstractFactory
     {
@@ -12,11 +10,6 @@ namespace Business.Implementations
         protected override string GetPadding()
         {
             return "1";
-        }
-
-        protected override string GetExtension(DocType type)
-        {
-            return type == DocType.DOC ? "doc" : "docx";
         }
     }
 }

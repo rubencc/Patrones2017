@@ -44,6 +44,7 @@
     <Compile Include="Enums\DocType.cs" />
     <Compile Include="Factory\IDocConfigurationFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategy\IExtensionStrategy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
