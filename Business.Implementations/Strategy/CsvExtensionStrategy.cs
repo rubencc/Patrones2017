@@ -1,6 +1,6 @@
 ﻿using Business.Interfaces;
 
-namespace Business.Implementations.Strategy
+namespace Business.Implementations
 {
     public class CsvExtensionStrategy : IExtensionStrategy
     {
