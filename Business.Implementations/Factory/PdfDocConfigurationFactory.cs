@@ -1,32 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using Business.Interfaces;
+﻿using Business.Interfaces;
 
 namespace Business.Implementations
 {
     public class PdfDocConfigurationFactory : AbstractFactory
     {
-        public override IDocConfiguration CreateConfiguration(DocType type)
+        protected override string GetFont()
         {
-            return this.Create(type);
+            return "Times";
         }
 
-        private IDocConfiguration Create(DocType type)
+        protected override string GetPadding()
         {
-            IDocConfiguration config = new DocConfiguration();
+            return "2";
+        }
 
-            config.Font = "Times";
-            config.Owner = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-            config.Hash = this.CalculateHash($"{config.Owner} - {DateTime.UtcNow}");
-            config.Extension = "pdf";
-            config.Padding = "2";
-            config.Type = type;
-
-            return config;
+        protected override string GetExtension(DocType type)
+        {
+            return "pdf";
         }
     }
 }

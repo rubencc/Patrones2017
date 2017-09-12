@@ -1,32 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using Business.Interfaces;
+﻿using Business.Interfaces;
 
 namespace Business.Implementations
 {
     public class ExcelDocConfigurationFactory : AbstractFactory
     {
-        public override IDocConfiguration CreateConfiguration(DocType type)
+        protected override string GetFont()
         {
-            return this.Create(type);
+            return "Arial";
         }
 
-        private IDocConfiguration Create(DocType type)
+        protected override string GetPadding()
         {
-            IDocConfiguration config = new DocConfiguration();
+            return "1";
+        }
 
-            config.Font = "Arial";
-            config.Owner = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-            config.Hash = this.CalculateHash($"{config.Owner} - {DateTime.UtcNow}");
-            config.Extension = type == DocType.XLS ? "xls" : "xlsx";
-            config.Padding = "1";
-            config.Type = type;
-
-            return config;
+        protected override string GetExtension(DocType type)
+        {
+            return type == DocType.XLS ? "xls" : "xlsx";
         }
     }
 }

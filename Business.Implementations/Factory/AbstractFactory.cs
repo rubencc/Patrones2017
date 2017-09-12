@@ -1,18 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using Business.Interfaces;
 
 namespace Business.Implementations
 {
     public abstract class AbstractFactory : IDocConfigurationFactory
     {
-        public abstract IDocConfiguration CreateConfiguration(DocType type);
+        public IDocConfiguration CreateConfiguration(DocType type)
+        {
+            IDocConfiguration config = new DocConfiguration();
 
-        protected string CalculateHash(string input)
+            config.Font = this.GetFont();
+            config.Padding = this.GetPadding();
+            config.Owner = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            config.Hash = this.CalculateHash($"{config.Owner} - {DateTime.UtcNow}");
+            config.Extension = this.GetExtension(type);
+            config.Type = type;
+            return config;
+        }
+
+        protected abstract string GetFont();
+
+        protected abstract string GetPadding();
+        protected abstract string GetExtension(DocType type);
+
+
+        protected virtual string CalculateHash(string input)
         {
             byte[] hash;
             using (MD5 md5 = MD5.Create())
