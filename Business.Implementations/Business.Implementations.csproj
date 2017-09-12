@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigIoC\Initialize.cs" />
     <Compile Include="Configuration\DocConfiguration.cs" />
     <Compile Include="Factory\AbstractFactory.cs" />
     <Compile Include="Factory\ExcelDocConfigurationFactory.cs" />
@@ -61,6 +65,13 @@
       <Project>{3ec8550b-f775-458c-b381-c630a9c6f76c}</Project>
       <Name>Business.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ConfigurationIoC\ConfigurationIoC.csproj">
+      <Project>{b8fb692b-9bd4-4f42-b0d0-6db1cea8f0da}</Project>
+      <Name>ConfigurationIoC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

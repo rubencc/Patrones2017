@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{02A7CB57-99E2-4C0D-9C22-4FE1AA89ED75}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>DocConfigurationConsole</RootNamespace>
-    <AssemblyName>DocConfigurationConsole</AssemblyName>
+    <ProjectGuid>{2173CC2A-AFB8-4491-A9C0-9F65A8D04E5C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IConfigIoC</RootNamespace>
+    <AssemblyName>IConfigIoC</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -45,26 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Business.Implementations\Business.Implementations.csproj">
-      <Project>{e0ee4c8a-1285-41f5-b9e2-f9dfc20fc444}</Project>
-      <Name>Business.Implementations</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Business.Interfaces\Business.Interfaces.csproj">
-      <Project>{3ec8550b-f775-458c-b381-c630a9c6f76c}</Project>
-      <Name>Business.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ConfigurationIoC\ConfigurationIoC.csproj">
-      <Project>{b8fb692b-9bd4-4f42-b0d0-6db1cea8f0da}</Project>
-      <Name>ConfigurationIoC</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

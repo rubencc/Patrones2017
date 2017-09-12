@@ -9,21 +9,12 @@ namespace Business.Implementations
 {
     public abstract class AbstractFactory : IDocConfigurationFactory
     {
-        private readonly List<IExtensionStrategy> extensionStrategies;
+        private readonly IEnumerable<IExtensionStrategy> extensionStrategies;
 
-        protected AbstractFactory()
+        protected AbstractFactory(IEnumerable<IExtensionStrategy> strategies)
         {
-            this.extensionStrategies = new List<IExtensionStrategy>()
-            {
-                new CsvExtensionStrategy(),
-                new DocExtensionStrategy(),
-                new DocxExtensionStrategy(),
-                new JsonExtensionStrategy(),
-                new PdfExtensionStrategy(),
-                new XlsExtensionStrategy(),
-                new XlsxExtensionStrategy(),
-                new XmlExtensionStrategy()
-            };
+            if (strategies == null) throw new ArgumentNullException(nameof(strategies));
+            this.extensionStrategies = strategies;
         }
 
         public IDocConfiguration CreateConfiguration(DocType type)

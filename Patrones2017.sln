@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.Interfaces", "Busi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.Implementations", "Business.Implementations\Business.Implementations.csproj", "{E0EE4C8A-1285-41F5-B9E2-F9DFC20FC444}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationIoC", "ConfigurationIoC\ConfigurationIoC.csproj", "{B8FB692B-9BD4-4F42-B0D0-6DB1CEA8F0DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E0EE4C8A-1285-41F5-B9E2-F9DFC20FC444}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0EE4C8A-1285-41F5-B9E2-F9DFC20FC444}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0EE4C8A-1285-41F5-B9E2-F9DFC20FC444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8FB692B-9BD4-4F42-B0D0-6DB1CEA8F0DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8FB692B-9BD4-4F42-B0D0-6DB1CEA8F0DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8FB692B-9BD4-4F42-B0D0-6DB1CEA8F0DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8FB692B-9BD4-4F42-B0D0-6DB1CEA8F0DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

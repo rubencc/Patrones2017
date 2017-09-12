@@ -1,4 +1,5 @@
-﻿using Business.Interfaces;
+﻿using System.Collections.Generic;
+using Business.Interfaces;
 
 namespace Business.Implementations
 {
@@ -17,6 +18,10 @@ namespace Business.Implementations
         public override bool IsValidFor(DocType type)
         {
             return DocType.XLS == type || DocType.XLSX == type;
+        }
+
+        public ExcelDocConfigurationFactory(IEnumerable<IExtensionStrategy> strategies) : base(strategies)
+        {
         }
     }
 }
