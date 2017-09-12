@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Configuration\IDocConfiguration.cs" />
     <Compile Include="Enums\DocType.cs" />
+    <Compile Include="Factory\IDocConfigurationFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -41,6 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\DocConfiguration.cs" />
+    <Compile Include="Factory\ExcelDocConfigurationFactory.cs" />
+    <Compile Include="Factory\MarkDocConfigurationFactory.cs" />
+    <Compile Include="Factory\PdfDocConfigurationFactory.cs" />
+    <Compile Include="Factory\WordDocConfigurationFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
