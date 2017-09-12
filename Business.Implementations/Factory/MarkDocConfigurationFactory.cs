@@ -8,9 +8,9 @@ using Business.Interfaces;
 
 namespace Business.Implementations
 {
-    public class MarkDocConfigurationFactory : IDocConfigurationFactory
+    public class MarkDocConfigurationFactory : AbstractFactory
     {
-        public IDocConfiguration CreateConfiguration(DocType type)
+        public override IDocConfiguration CreateConfiguration(DocType type)
         {
             return this.Create(type);
         }
@@ -42,24 +42,6 @@ namespace Business.Implementations
             config.Type = type;
 
             return config;
-        }
-
-        private string CalculateHash(string input)
-        {
-            byte[] hash;
-            using (MD5 md5 = MD5.Create())
-            {
-                hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
-            }
-
-            StringBuilder sb = new StringBuilder();
-
-            foreach (byte t in hash)
-            {
-                sb.Append(t.ToString("x2"));
-            }
-
-            return sb.ToString();
         }
     }
 }
