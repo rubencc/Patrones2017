@@ -4,8 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Autofac;
-using Autofac.Core;
-using Business.Implementations;
 using Business.Interfaces;
 using ConfigurationIoC;
 
@@ -25,14 +23,9 @@ namespace DocConfigurationConsole
                 IEnumerable<IDocConfigurationFactory> factories =
                     scope.Resolve<IEnumerable<IDocConfigurationFactory>>();
 
-
                 Console.WriteLine("Introduzca un tipo de documento");
 
                 string key = Console.ReadLine();
-
-
-
-                
 
                 DocType type = (DocType)Enum.Parse(typeof(DocType), key, true);
 
