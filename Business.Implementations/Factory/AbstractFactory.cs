@@ -39,6 +39,11 @@ namespace Business.Implementations
             return config;
         }
 
+        public virtual bool IsValidFor(DocType type)
+        {
+            return false;
+        }
+
         protected abstract string GetFont();
         protected abstract string GetPadding();
 

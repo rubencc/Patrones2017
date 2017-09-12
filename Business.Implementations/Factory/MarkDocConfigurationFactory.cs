@@ -1,4 +1,6 @@
-﻿namespace Business.Implementations
+﻿using Business.Interfaces;
+
+namespace Business.Implementations
 {
     public class MarkDocConfigurationFactory : AbstractFactory
     {
@@ -10,6 +12,11 @@
         protected override string GetPadding()
         {
             return "0";
+        }
+
+        public override bool IsValidFor(DocType type)
+        {
+            return DocType.CSV == type || DocType.JSON == type || DocType.XML == type;
         }
     }
 }
