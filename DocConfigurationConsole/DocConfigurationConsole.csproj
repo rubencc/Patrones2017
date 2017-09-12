@@ -48,5 +48,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business.Implementations\Business.Implementations.csproj">
+      <Project>{e0ee4c8a-1285-41f5-b9e2-f9dfc20fc444}</Project>
+      <Name>Business.Implementations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business.Interfaces\Business.Interfaces.csproj">
+      <Project>{3ec8550b-f775-458c-b381-c630a9c6f76c}</Project>
+      <Name>Business.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
