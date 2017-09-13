@@ -9,6 +9,7 @@
         DOCX,
         XLS,
         XLSX,
-        PDF
+        PDF,
+        ODF
     }
 }

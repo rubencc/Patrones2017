@@ -12,6 +12,7 @@ namespace Business.Implementations
             container.RegisterType<MarkDocConfigurationFactory>().As<IDocConfigurationFactory>();
             container.RegisterType<PdfDocConfigurationFactory>().As<IDocConfigurationFactory>();
             container.RegisterType<WordDocConfigurationFactory>().As<IDocConfigurationFactory>();
+            container.RegisterType<OpenDocConfigurationFactory>().As<IDocConfigurationFactory>();
 
             container.RegisterType<CsvExtensionStrategy>().As<IExtensionStrategy>();
             container.RegisterType<DocExtensionStrategy>().As<IExtensionStrategy>();
