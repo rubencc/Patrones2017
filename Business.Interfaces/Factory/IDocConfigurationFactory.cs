@@ -1,6 +1,8 @@
-﻿namespace Business.Interfaces
+﻿using System;
+
+namespace Business.Interfaces
 {
-    public interface IDocConfigurationFactory
+    public interface IDocConfigurationFactory : IDisposable
     {
         IDocConfiguration CreateConfiguration(DocType type);
         bool IsValidFor(DocType type);

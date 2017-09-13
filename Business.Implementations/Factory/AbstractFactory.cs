@@ -13,8 +13,7 @@ namespace Business.Implementations
 
         protected AbstractFactory(IEnumerable<IExtensionStrategy> strategies)
         {
-            if (strategies == null) throw new ArgumentNullException(nameof(strategies));
-            this.extensionStrategies = strategies;
+            this.extensionStrategies = strategies ?? throw new ArgumentNullException(nameof(strategies));
         }
 
         public IDocConfiguration CreateConfiguration(DocType type)
@@ -60,6 +59,25 @@ namespace Business.Implementations
             }
 
             return sb.ToString();
+        }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+            this.Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposing)
+                return;
+
+            this.DisposeResources();
+        }
+
+        protected virtual void DisposeResources()
+        {
+
         }
     }
 }
